@@ -555,4 +555,22 @@ class RecordingService : Service() {
         RecorderState.countdown = 0
         RecorderState.micActive = false
         RecorderState.muted = false
-        RecorderState.messa
+                RecorderState.message = msg
+        stopForeground(STOP_FOREGROUND_REMOVE)
+        stopSelf()
+    }
+
+    override fun onDestroy() {
+        if (active) finish()
+        if (counting) {
+            counting = false
+            release()
+            RecorderState.countdown = 0
+        }
+        hideCd()
+        handler.removeCallbacks(ticker)
+        handler.removeCallbacks(cdTick)
+        handler.removeCallbacks(startRunnable)
+        super.onDestroy()
+    }
+}
