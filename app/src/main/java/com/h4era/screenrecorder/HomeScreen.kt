@@ -59,7 +59,7 @@ fun HomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("H4ERA", fontSize = 34.sp, fontWeight = FontWeight.Bold, color = Pal.accent)
-        Text("SCREEN RECORDER", fontSize = 13.sp, color = Pal.muted, letterSpacing = 4.sp)
+        Text("CLIP", fontSize = 13.sp, color = Pal.muted, letterSpacing = 4.sp)
         Text(
             "Record Everything. Create Without Limits.",
             fontSize = 12.sp,
